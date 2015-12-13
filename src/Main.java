@@ -28,7 +28,7 @@ public class Main {
 		} else {
 			HullCalculator calculator = new HullCalculator(true);
 			HullObservable observer = new HullObservable(calculator);
-			MainWindow mainWindow = new MainWindow(calculator, observer);
+			new MainWindow(calculator, observer);
 		}
 	}
 
