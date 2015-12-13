@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.gui;
+package gui;
 
 import java.awt.Point;
 import java.util.List;

@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.algorithm;
+package algorithm;
 
 import java.awt.Point;
 import java.awt.geom.Arc2D;

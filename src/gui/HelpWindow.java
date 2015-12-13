@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.gui;
+package gui;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -20,7 +20,7 @@ import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
-import de.feu.propra15.q9278273.utils.Utils;
+import utils.Utils;
 
 /**
  * The help window of the user interface.

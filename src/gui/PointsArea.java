@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.gui;
+package gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.undo.UndoManager;
 
-import de.feu.propra15.q9278273.algorithm.HullCalculator;
-import de.feu.propra15.q9278273.algorithm.HullObservable;
+import algorithm.HullCalculator;
+import algorithm.HullObservable;
 
 /**
  * The Class PointsArea. The are where the convex hull is drawn.

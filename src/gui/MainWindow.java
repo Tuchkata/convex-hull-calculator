@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.gui;
+package gui;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -31,9 +31,9 @@ import javax.swing.event.UndoableEditEvent;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.UndoManager;
 
-import de.feu.propra15.q9278273.algorithm.HullCalculator;
-import de.feu.propra15.q9278273.algorithm.HullObservable;
-import de.feu.propra15.q9278273.utils.Utils;
+import algorithm.HullCalculator;
+import algorithm.HullObservable;
+import utils.Utils;
 
 // TODO: Auto-generated Javadoc
 /**

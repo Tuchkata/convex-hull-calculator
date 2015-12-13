@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.utils;
+package utils;
 
 import javax.swing.UIManager;
 

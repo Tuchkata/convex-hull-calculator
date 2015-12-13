@@ -1,17 +1,17 @@
-package de.feu.propra15.q9278273;
 
+
+import algorithm.HullCalculator;
+import algorithm.HullObservable;
 import de.feu.propra15.interfaces.IHullCalculator;
-import de.feu.propra15.q9278273.algorithm.HullCalculator;
-import de.feu.propra15.q9278273.algorithm.HullObservable;
-import de.feu.propra15.q9278273.gui.MainWindow;
 import de.feu.propra15.tester.Tester;
+import gui.MainWindow;
 
 /**
  * The main class.
  * 
  * @author Teodor Shaterov
  */
-public class q9278273Main {
+public class Main {
 
 	/**
 	 * The main method.

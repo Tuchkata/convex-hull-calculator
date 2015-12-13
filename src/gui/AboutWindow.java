@@ -1,4 +1,4 @@
-package de.feu.propra15.q9278273.gui;
+package gui;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import de.feu.propra15.q9278273.utils.Utils;
+import utils.Utils;
 
 /**
  * The about window of the user interface.
