@@ -23,7 +23,7 @@ import de.feu.propra15.interfaces.IHullCalculator;
 public class HullCalculator implements IHullCalculator {
 
 	/** The Constant MATRIKEL_NR. */
-	private static final String MATRIKEL_NR = "9278273";
+	private static final String MATRIKEL_NR = "";
 
 	/** The Constant NAME. */
 	private static final String NAME = "Teodor Shaterov";

@@ -9,7 +9,7 @@ package gui;
 public interface GuiConstants {
 
 	/** The Constant WINDOW_MAIN_NAME. */
-	public static final String WINDOW_MAIN_NAME = "Convex hull calculator - Teodor Shaterov 9278273";
+	public static final String WINDOW_MAIN_NAME = "Convex hull calculator - Teodor Shaterov";
 
 	/** The Constant WINDOW_ABOUT_NAME. */
 	public static final String WINDOW_ABOUT_NAME = "About convex hull calculator";
@@ -75,7 +75,7 @@ public interface GuiConstants {
 	public static final String LABEL_ABOUT_PROGRAMM = "Convex hull calculator v1.0";
 
 	/** The Constant LABEL_ABOUT_AUTHOR. */
-	public static final String LABEL_ABOUT_AUTHOR = "Teodor Shaterov 9278273";
+	public static final String LABEL_ABOUT_AUTHOR = "Teodor Shaterov";
 
 	/** The Constant SHORTCUT_NEW. */
 	public static final String SHORTCUT_NEW = "control N";
