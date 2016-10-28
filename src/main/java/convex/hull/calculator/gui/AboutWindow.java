@@ -1,4 +1,4 @@
-package gui;
+package convex.hull.calculator.gui;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -11,7 +11,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import utils.Utils;
+import convex.hull.calculator.configuration.IConfigurationConstants;
+import convex.hull.calculator.configuration.IResourcesPaths;
+import convex.hull.calculator.utils.Utils;
 
 /**
  * The about window of the user interface.
@@ -32,20 +34,20 @@ public class AboutWindow extends JFrame {
 	 */
 	public AboutWindow(Container container) {
 		Utils.setLookAndFeel();
-		URL iconUrl = getClass().getResource("icon.png");
+		URL iconUrl = getClass().getClassLoader().getResource(IResourcesPaths.ICON_PATH);
 		ImageIcon icon = new ImageIcon(iconUrl);
 		setIconImage(icon.getImage());
 		
-		setTitle(GuiConstants.WINDOW_ABOUT_NAME);
+		setTitle(IConfigurationConstants.WINDOW_ABOUT_NAME);
 		setLocationRelativeTo(container);
 		Container thisContainer = getContentPane();
 		thisContainer.setLayout(new BoxLayout(thisContainer, BoxLayout.Y_AXIS));
 
-		JLabel textLabel = new JLabel(GuiConstants.LABEL_ABOUT_PROGRAMM);
+		JLabel textLabel = new JLabel(IConfigurationConstants.LABEL_ABOUT_PROGRAMM);
 		textLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		textLabel.setFont(new Font(Font.SERIF, Font.BOLD, 24));
 
-		JLabel creator = new JLabel(GuiConstants.LABEL_ABOUT_AUTHOR);
+		JLabel creator = new JLabel(IConfigurationConstants.LABEL_ABOUT_AUTHOR);
 		creator.setAlignmentX(Component.CENTER_ALIGNMENT);
 		creator.setFont(new Font(Font.SERIF, Font.BOLD, 18));
 

@@ -1,10 +1,10 @@
+package convex.hull.calculator;
 
-
-import algorithm.HullCalculator;
-import algorithm.HullObservable;
+import convex.hull.calculator.algorithm.HullCalculator;
+import convex.hull.calculator.algorithm.HullObservable;
+import convex.hull.calculator.gui.MainWindow;
 import de.feu.propra15.interfaces.IHullCalculator;
 import de.feu.propra15.tester.Tester;
-import gui.MainWindow;
 
 /**
  * The main class.

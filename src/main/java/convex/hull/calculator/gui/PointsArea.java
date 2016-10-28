@@ -1,4 +1,4 @@
-package gui;
+package convex.hull.calculator.gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.undo.UndoManager;
 
-import algorithm.HullCalculator;
-import algorithm.HullObservable;
+import convex.hull.calculator.algorithm.HullCalculator;
+import convex.hull.calculator.algorithm.HullObservable;
 
 /**
  * The Class PointsArea. The are where the convex hull is drawn.

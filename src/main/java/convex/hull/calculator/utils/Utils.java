@@ -1,4 +1,4 @@
-package utils;
+package convex.hull.calculator.utils;
 
 import javax.swing.UIManager;
 

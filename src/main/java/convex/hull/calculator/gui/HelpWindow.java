@@ -1,4 +1,4 @@
-package gui;
+package convex.hull.calculator.gui;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -20,7 +20,8 @@ import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
-import utils.Utils;
+import convex.hull.calculator.configuration.IConfigurationConstants;
+import convex.hull.calculator.utils.Utils;
 
 /**
  * The help window of the user interface.
@@ -50,7 +51,7 @@ public class HelpWindow extends JPanel implements TreeSelectionListener {
 		Utils.setLookAndFeel();
 		
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode(
-				GuiConstants.HELP_CONVEX_HULL_ROOT);
+				IConfigurationConstants.HELP_CONVEX_HULL_ROOT);
 		createTree(top);
 		tree = new JTree(top);
 		tree.getSelectionModel().setSelectionMode(
@@ -109,41 +110,41 @@ public class HelpWindow extends JPanel implements TreeSelectionListener {
 		DefaultMutableTreeNode help = null;
 
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_INTRODUCTION,
-				GuiConstants.HELP_HTML_INTRODUCTION));
+				IConfigurationConstants.HELP_INTRODUCTION,
+				IConfigurationConstants.HELP_HTML_INTRODUCTION));
 		root.add(help);
 
-		category = new DefaultMutableTreeNode(GuiConstants.HELP_GETTING_STARTED);
+		category = new DefaultMutableTreeNode(IConfigurationConstants.HELP_GETTING_STARTED);
 		root.add(category);
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_ADDING_POINTS,
-				GuiConstants.HELP_HTML_ADDING_POINTS));
+				IConfigurationConstants.HELP_ADDING_POINTS,
+				IConfigurationConstants.HELP_HTML_ADDING_POINTS));
 		category.add(help);
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_MOVING_POINTS,
-				GuiConstants.HELP_HTML_MOVING_POINGS));
+				IConfigurationConstants.HELP_MOVING_POINTS,
+				IConfigurationConstants.HELP_HTML_MOVING_POINGS));
 		category.add(help);
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_REMOVING_POINTS,
-				GuiConstants.HELP_HTML_REMOVING_POINTS));
+				IConfigurationConstants.HELP_REMOVING_POINTS,
+				IConfigurationConstants.HELP_HTML_REMOVING_POINTS));
 		category.add(help);
-		help = new DefaultMutableTreeNode(new Help(GuiConstants.HELP_UNDO_REDO,
-				GuiConstants.HELP_HTML_UNDO_REDO));
+		help = new DefaultMutableTreeNode(new Help(IConfigurationConstants.HELP_UNDO_REDO,
+				IConfigurationConstants.HELP_HTML_UNDO_REDO));
 		category.add(help);
 
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_WORKING_WITH_FILES,
-				GuiConstants.HELP_HTML_WORKING_WITH_FILES));
+				IConfigurationConstants.HELP_WORKING_WITH_FILES,
+				IConfigurationConstants.HELP_HTML_WORKING_WITH_FILES));
 		root.add(help);
 
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_RANDOM_POINTS,
-				GuiConstants.HELP_HTML_RANDOM_POINTS));
+				IConfigurationConstants.HELP_RANDOM_POINTS,
+				IConfigurationConstants.HELP_HTML_RANDOM_POINTS));
 		root.add(help);
 
 		help = new DefaultMutableTreeNode(new Help(
-				GuiConstants.HELP_SHORTCUT_KEYS,
-				GuiConstants.HELP_HTML_SHORTCUT_KEYS));
+				IConfigurationConstants.HELP_SHORTCUT_KEYS,
+				IConfigurationConstants.HELP_HTML_SHORTCUT_KEYS));
 		root.add(help);
 	}
 
@@ -180,7 +181,7 @@ public class HelpWindow extends JPanel implements TreeSelectionListener {
 			if (url != null) {
 				htmlPane.setPage(url);
 			} else {
-				htmlPane.setText(GuiConstants.HELP_FILE_NOT_FOUND);
+				htmlPane.setText(IConfigurationConstants.HELP_FILE_NOT_FOUND);
 			}
 		} catch (IOException e) {
 			System.err.println("The given URL " + url + " cannot be read.");
@@ -208,7 +209,7 @@ public class HelpWindow extends JPanel implements TreeSelectionListener {
 		 */
 		public Help(String helpType, String fileName) {
 			this.helpType = helpType;
-			this.fileName = getClass().getResource(fileName);
+			this.fileName = getClass().getClassLoader().getResource(fileName);
 			if (this.fileName == null) {
 				System.err.println("File " + fileName + " could not be found.");
 			}

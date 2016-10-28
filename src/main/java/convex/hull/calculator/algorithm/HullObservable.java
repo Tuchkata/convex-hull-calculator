@@ -1,4 +1,4 @@
-package algorithm;
+package convex.hull.calculator.algorithm;
 
 import java.awt.Point;
 import java.io.IOException;

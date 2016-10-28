@@ -1,4 +1,4 @@
-package gui;
+package convex.hull.calculator.configuration;
 
 
 /**
@@ -6,7 +6,7 @@ package gui;
  * which are used in the user interface.
  * @author Teodor Shaterov
  */
-public interface GuiConstants {
+public interface IConfigurationConstants {
 
 	/** The Constant WINDOW_MAIN_NAME. */
 	public static final String WINDOW_MAIN_NAME = "Convex hull calculator - Teodor Shaterov";

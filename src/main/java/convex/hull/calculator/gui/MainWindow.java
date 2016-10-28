@@ -1,4 +1,4 @@
-package gui;
+package convex.hull.calculator.gui;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -31,9 +31,11 @@ import javax.swing.event.UndoableEditEvent;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.UndoManager;
 
-import algorithm.HullCalculator;
-import algorithm.HullObservable;
-import utils.Utils;
+import convex.hull.calculator.algorithm.HullCalculator;
+import convex.hull.calculator.algorithm.HullObservable;
+import convex.hull.calculator.configuration.IConfigurationConstants;
+import convex.hull.calculator.configuration.IResourcesPaths;
+import convex.hull.calculator.utils.Utils;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -83,11 +85,11 @@ public class MainWindow extends JFrame implements Observer {
 		this.calculator = calculator;
 		this.observable = observable;
 		observable.addObserver(this);
-		URL iconUrl = getClass().getResource("icon.png");
+		URL iconUrl = getClass().getClassLoader().getResource(IResourcesPaths.ICON_PATH);
 		ImageIcon icon = new ImageIcon(iconUrl);
 		setIconImage(icon.getImage());
 
-		setTitle(GuiConstants.WINDOW_MAIN_NAME);
+		setTitle(IConfigurationConstants.WINDOW_MAIN_NAME);
 		setBounds(50, 50, 700, 700);
 
 		UndoManager undoManager = new UndoManager();
@@ -128,33 +130,33 @@ public class MainWindow extends JFrame implements Observer {
 	private JMenuBar createMenuBar(final UndoManager undoManager) {
 		JMenuBar menuBar = new JMenuBar();
 
-		JMenu fileMenu = new JMenu(GuiConstants.MENU_FILE);
-		JMenuItem fileMenuNew = new JMenuItem(GuiConstants.MENU_FILE_NEW);
-		JMenuItem fileMenuOpen = new JMenuItem(GuiConstants.MENU_FILE_OPEN);
-		JMenuItem fileMenuSave = new JMenuItem(GuiConstants.MENU_FILE_SAVE);
-		JMenuItem fileMenuSaveAs = new JMenuItem(GuiConstants.MENU_FILE_SAVE_AS);
-		JMenuItem fileMenuExit = new JMenuItem(GuiConstants.MENU_FILE_EXIT);
+		JMenu fileMenu = new JMenu(IConfigurationConstants.MENU_FILE);
+		JMenuItem fileMenuNew = new JMenuItem(IConfigurationConstants.MENU_FILE_NEW);
+		JMenuItem fileMenuOpen = new JMenuItem(IConfigurationConstants.MENU_FILE_OPEN);
+		JMenuItem fileMenuSave = new JMenuItem(IConfigurationConstants.MENU_FILE_SAVE);
+		JMenuItem fileMenuSaveAs = new JMenuItem(IConfigurationConstants.MENU_FILE_SAVE_AS);
+		JMenuItem fileMenuExit = new JMenuItem(IConfigurationConstants.MENU_FILE_EXIT);
 
-		JMenu optionsMenu = new JMenu(GuiConstants.MENU_OPTIONS);
+		JMenu optionsMenu = new JMenu(IConfigurationConstants.MENU_OPTIONS);
 		final JMenuItem optionsMenuUndo = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_UNDO);
+				IConfigurationConstants.MENU_OPTIONS_UNDO);
 		final JMenuItem optionsMenuRedo = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_REDO);
-		JMenu optionsRandomMenu = new JMenu(GuiConstants.MENU_OPTIONS_RANDOM);
+				IConfigurationConstants.MENU_OPTIONS_REDO);
+		JMenu optionsRandomMenu = new JMenu(IConfigurationConstants.MENU_OPTIONS_RANDOM);
 		JMenuItem optionsRandomMenu10 = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_RANDOM_10);
+				IConfigurationConstants.MENU_OPTIONS_RANDOM_10);
 		JMenuItem optionsRandomMenu50 = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_RANDOM_50);
+				IConfigurationConstants.MENU_OPTIONS_RANDOM_50);
 		JMenuItem optionsRandomMenu100 = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_RANDOM_100);
+				IConfigurationConstants.MENU_OPTIONS_RANDOM_100);
 		JMenuItem optionsRandomMenu500 = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_RANDOM_500);
+				IConfigurationConstants.MENU_OPTIONS_RANDOM_500);
 		JMenuItem optionsRandomMenu1000 = new JMenuItem(
-				GuiConstants.MENU_OPTIONS_RANDOM_1000);
+				IConfigurationConstants.MENU_OPTIONS_RANDOM_1000);
 
-		JMenu helpMenu = new JMenu(GuiConstants.MENU_HELP);
-		JMenuItem helpMenuHelp = new JMenuItem(GuiConstants.MENU_HELP_HELP);
-		JMenuItem helpMenuAbout = new JMenuItem(GuiConstants.MENU_HELP_ABOUT);
+		JMenu helpMenu = new JMenu(IConfigurationConstants.MENU_HELP);
+		JMenuItem helpMenuHelp = new JMenuItem(IConfigurationConstants.MENU_HELP_HELP);
+		JMenuItem helpMenuAbout = new JMenuItem(IConfigurationConstants.MENU_HELP_ABOUT);
 
 		menuBar.add(fileMenu);
 		menuBar.add(optionsMenu);
@@ -184,23 +186,23 @@ public class MainWindow extends JFrame implements Observer {
 		helpMenu.add(helpMenuAbout);
 
 		fileMenuNew.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_NEW));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_NEW));
 		fileMenuOpen.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_OPEN));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_OPEN));
 		fileMenuSave.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_SAVE));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_SAVE));
 		fileMenuSaveAs.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_SAVE_AS));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_SAVE_AS));
 		fileMenuExit.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_EXIT));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_EXIT));
 
 		optionsMenuUndo.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_UNDO));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_UNDO));
 		optionsMenuRedo.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_REDO));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_REDO));
 
 		helpMenuHelp.setAccelerator(KeyStroke
-				.getKeyStroke(GuiConstants.SHORTCUT_HELP));
+				.getKeyStroke(IConfigurationConstants.SHORTCUT_HELP));
 
 		fileMenuNew.addActionListener(new ActionListener() {
 			@Override
@@ -210,7 +212,7 @@ public class MainWindow extends JFrame implements Observer {
 				undoManager.discardAllEdits();
 				optionsMenuUndo.setEnabled(undoManager.canUndo());
 				optionsMenuRedo.setEnabled(undoManager.canRedo());
-				setTitle(GuiConstants.WINDOW_MAIN_NAME);
+				setTitle(IConfigurationConstants.WINDOW_MAIN_NAME);
 			}
 		});
 
@@ -219,14 +221,14 @@ public class MainWindow extends JFrame implements Observer {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.setCurrentDirectory(new File(new File(System
-						.getProperty(GuiConstants.USER_DIR)).getParentFile()
+						.getProperty(IConfigurationConstants.USER_DIR)).getParentFile()
 						.getAbsolutePath()
-						+ GuiConstants.TESTER_FOLDER));
+						+ IConfigurationConstants.TESTER_FOLDER));
 				fileChooser.showOpenDialog(getContentPane());
 				File file = fileChooser.getSelectedFile();
 				if (file != null) {
 					fileName = file.getAbsolutePath();
-					setTitle(GuiConstants.WINDOW_MAIN_NAME + " - " + fileName);
+					setTitle(IConfigurationConstants.WINDOW_MAIN_NAME + " - " + fileName);
 					try {
 						observable.addPointsFromFile(file.getAbsolutePath());
 					} catch (IOException e1) {
@@ -243,14 +245,14 @@ public class MainWindow extends JFrame implements Observer {
 				if (fileName == null) {
 					JFileChooser fileChooser = new JFileChooser();
 					fileChooser.setCurrentDirectory(new File(new File(System
-							.getProperty(GuiConstants.USER_DIR))
+							.getProperty(IConfigurationConstants.USER_DIR))
 							.getParentFile().getAbsolutePath()
-							+ GuiConstants.TESTER_FOLDER));
+							+ IConfigurationConstants.TESTER_FOLDER));
 					fileChooser.showSaveDialog(getContentPane());
 					File file = fileChooser.getSelectedFile();
 					if (file != null) {
 						fileName = file.getAbsolutePath();
-						setTitle(GuiConstants.WINDOW_MAIN_NAME + " - "
+						setTitle(IConfigurationConstants.WINDOW_MAIN_NAME + " - "
 								+ fileName);
 					}
 				}
@@ -266,15 +268,15 @@ public class MainWindow extends JFrame implements Observer {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser fileChooser = new JFileChooser();
 				fileChooser.setCurrentDirectory(new File(new File(System
-						.getProperty(GuiConstants.USER_DIR)).getParentFile()
+						.getProperty(IConfigurationConstants.USER_DIR)).getParentFile()
 						.getAbsolutePath()
-						+ GuiConstants.TESTER_FOLDER));
+						+ IConfigurationConstants.TESTER_FOLDER));
 				fileChooser.showSaveDialog(getContentPane());
 				File file = fileChooser.getSelectedFile();
 				if (file != null) {
 					fileName = file.getAbsolutePath();
 					writeToFile(fileName);
-					setTitle(GuiConstants.WINDOW_MAIN_NAME + " - " + fileName);
+					setTitle(IConfigurationConstants.WINDOW_MAIN_NAME + " - " + fileName);
 				}
 				undoManager.discardAllEdits();
 			}
@@ -328,8 +330,8 @@ public class MainWindow extends JFrame implements Observer {
 		helpMenuHelp.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JFrame frame = new JFrame(GuiConstants.WINDOW_HELP_NAME);
-				URL iconUrl = getClass().getResource("icon.png");
+				JFrame frame = new JFrame(IConfigurationConstants.WINDOW_HELP_NAME);
+				URL iconUrl = getClass().getClassLoader().getResource(IResourcesPaths.ICON_PATH);
 				ImageIcon icon = new ImageIcon(iconUrl);
 				frame.setIconImage(icon.getImage());
 

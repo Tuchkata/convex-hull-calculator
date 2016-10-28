@@ -1,4 +1,4 @@
-package gui;
+package convex.hull.calculator.gui;
 
 import java.awt.Point;
 import java.util.List;
